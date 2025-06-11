@@ -30,7 +30,6 @@ class Task {
             taskData.dueDate
         );
         tasks.push(task);
-        console.log('Task created in model:', task);
         return task;
     }
 

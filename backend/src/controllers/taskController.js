@@ -48,12 +48,6 @@ const taskController = {
     createTask: (req, res) => {
         try {
             const { title, description, priority, dueDate } = req.body;
-            console.log('Creating task:', {
-                title,
-                description,
-                priority,
-                dueDate,
-            });
 
             if (!title) {
                 return res.status(400).json({
@@ -103,8 +97,6 @@ const taskController = {
 
             const updatedTask = Task.update(id, updates);
 
-            console.log('updates:', updates);
-            console.log('Updated Task:', updatedTask);
             if (!updatedTask) {
                 return res.status(404).json({
                     status: 'fail',

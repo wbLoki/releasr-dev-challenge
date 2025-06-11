@@ -32,7 +32,6 @@ export const useTaskStore = create<TaskState>((set) => ({
         set({ isLoading: true, error: null });
         try {
             const tasks = await taskService.getAllTasks();
-            console.log('Fetched tasks:', tasks);
             set({ tasks, isLoading: false });
         } catch (error) {
             set({
