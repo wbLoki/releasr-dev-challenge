@@ -36,7 +36,6 @@ export default function Home() {
 
     // Handle task form submission
     const handleTaskSubmit = (data: TaskFormValues) => {
-        console.log('Task data submitted:', data);
         if (editingTask) {
             updateTask(editingTask.id, data);
             setEditingTask(null);
@@ -70,9 +69,9 @@ export default function Home() {
                         <motion.h1
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className='text-3xl font-bold text-gray-900 dark:text-white'
+                            className='text-3xl font-bold text-gray-900 dark:text-white capitalize'
                         >
-                            Task Manager
+                            gestionnaire de tâches
                         </motion.h1>
                         <div className='flex items-center space-x-4'>
                             <button
@@ -135,7 +134,7 @@ export default function Home() {
                                         d='M12 4v16m8-8H4'
                                     />
                                 </svg>
-                                Add Task
+                                Ajouter une tâche
                             </motion.button>
                         </div>
                     </div>

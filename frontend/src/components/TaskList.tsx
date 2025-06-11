@@ -55,49 +55,6 @@ export default function TaskList({
     return (
         <div className='space-y-4'>
             <div className='flex flex-wrap gap-3 justify-between items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-4'>
-                {/* <div className='flex space-x-2'>
-                    <button
-                        onClick={() => setFilter('all')}
-                        className={`px-3 py-1 rounded-md text-sm ${
-                            filter === 'all'
-                                ? 'bg-indigo-600 text-white'
-                                : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
-                        }`}
-                    >
-                        All
-                    </button>
-                    <button
-                        onClick={() => setFilter('active')}
-                        className={`px-3 py-1 rounded-md text-sm ${
-                            filter === 'active'
-                                ? 'bg-indigo-600 text-white'
-                                : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
-                        }`}
-                    >
-                        Active
-                    </button>
-                    <button
-                        onClick={() => setFilter('completed')}
-                        className={`px-3 py-1 rounded-md text-sm ${
-                            filter === 'completed'
-                                ? 'bg-indigo-600 text-white'
-                                : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
-                        }`}
-                    >
-                        Completed
-                    </button>
-                    <select
-                        value={sortBy}
-                        onChange={(e) =>
-                            setSortBy(e.target.value as 'date' | 'priority')
-                        }
-                        className='bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md text-sm px-3 py-1'
-                    >
-                        <option value='date'>Sort by Date</option>
-                        <option value='priority'>Sort by Priority</option>
-                    </select>
-                </div> */}
-
                 <TaskFilter
                     status={status}
                     dueDate={dueDate}
@@ -112,8 +69,8 @@ export default function TaskList({
                         }
                         className='bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md text-sm px-3 py-1 text-gray-900 dark:text-white'
                     >
-                        <option value='date'>Sort by Date</option>
-                        <option value='priority'>Sort by Priority</option>
+                        <option value='date'>Trier par date</option>
+                        <option value='priority'>Trier par priorité</option>
                     </select>
 
                     <div className='flex border border-gray-300 dark:border-gray-600 rounded-md overflow-hidden'>
@@ -170,7 +127,7 @@ export default function TaskList({
             {sortedTasks.length === 0 ? (
                 <div className='text-center py-10 bg-white dark:bg-gray-800 rounded-lg shadow'>
                     <p className='text-gray-500 dark:text-gray-400'>
-                        No tasks found
+                        Aucune tâche trouvée
                     </p>
                 </div>
             ) : (

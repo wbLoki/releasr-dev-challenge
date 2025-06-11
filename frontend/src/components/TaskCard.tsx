@@ -14,6 +14,12 @@ const priorityColors = {
     high: 'bg-red-100 text-red-800',
 };
 
+const priorityText = {
+    low: 'Faible',
+    medium: 'Moyenne',
+    high: 'Élevée',
+};
+
 export default function TaskCard({
     task,
     onEdit,
@@ -77,7 +83,7 @@ export default function TaskCard({
                             priorityColors[task.priority]
                         }`}
                     >
-                        {task.priority}
+                        {priorityText[task.priority]}
                     </span>
                 </div>
                 <div className='flex'>

@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 import { Task, TaskFormValues } from '../types/task';
 
 const taskSchema = z.object({
-    title: z.string().min(1, 'Title is required'),
+    title: z.string().min(1, 'Le titre est obligatoire'),
     description: z.string().optional(),
     priority: z.enum(['low', 'medium', 'high']),
     dueDate: z.string().refine((val) => !isNaN(Date.parse(val)), {
-        message: 'Invalid date',
+        message: 'Date invalide',
     }),
     completed: z.boolean(),
 });
@@ -57,7 +57,7 @@ export default function TaskForm({ task, onSubmit, onCancel }: TaskFormProps) {
                         htmlFor='title'
                         className='block text-sm font-medium text-gray-700 dark:text-gray-300'
                     >
-                        Title
+                        Titre
                     </label>
                     <input
                         id='title'
@@ -92,16 +92,16 @@ export default function TaskForm({ task, onSubmit, onCancel }: TaskFormProps) {
                         htmlFor='priority'
                         className='block text-sm font-medium text-gray-700 dark:text-gray-300'
                     >
-                        Priority
+                        Priorité
                     </label>
                     <select
                         id='priority'
                         {...register('priority')}
                         className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white'
                     >
-                        <option value='low'>Low</option>
-                        <option value='medium'>Medium</option>
-                        <option value='high'>High</option>
+                        <option value='low'>Faible</option>
+                        <option value='medium'>Moyenne</option>
+                        <option value='high'>Élevée</option>
                     </select>
                 </div>
 
@@ -110,7 +110,7 @@ export default function TaskForm({ task, onSubmit, onCancel }: TaskFormProps) {
                         htmlFor='dueDate'
                         className='block text-sm font-medium text-gray-700 dark:text-gray-300'
                     >
-                        Due Date
+                        Date d’échéance
                     </label>
                     <input
                         id='dueDate'
@@ -137,7 +137,7 @@ export default function TaskForm({ task, onSubmit, onCancel }: TaskFormProps) {
                             htmlFor='completed'
                             className='ml-2 block text-sm text-gray-700 dark:text-gray-300'
                         >
-                            Mark as completed
+                            Marquer comme terminé
                         </label>
                     </div>
                 )}
@@ -148,13 +148,13 @@ export default function TaskForm({ task, onSubmit, onCancel }: TaskFormProps) {
                         onClick={onCancel}
                         className='inline-flex justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600'
                     >
-                        Cancel
+                        Annuler
                     </button>
                     <button
                         type='submit'
                         className='inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
                     >
-                        {isEditMode ? 'Update' : 'Create'}
+                        {isEditMode ? 'Mettre à jour' : 'Créer'}
                     </button>
                 </div>
             </form>

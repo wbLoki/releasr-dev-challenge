@@ -33,18 +33,18 @@ export function TaskFilter({
                     }
                     className='mt-1 block rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 text-gray-900 dark:text-white'
                 >
-                    <option value='all'>All</option>
-                    <option value='active'>Active</option>
-                    <option value='completed'>Completed</option>
+                    <option value='all'>Toutes</option>
+                    <option value='active'>Actives</option>
+                    <option value='completed'>Terminées</option>
                 </select>
             </div>
 
             <div>
                 <label
                     htmlFor='dueDate'
-                    className='block text-sm font-medium text-gray-700 dark:text-gray-300'
+                    className='block capitalize text-sm font-medium text-gray-700 dark:text-gray-300'
                 >
-                    Due Date
+                    date d’échéance
                 </label>
                 <select
                     id='dueDate'
@@ -54,10 +54,10 @@ export function TaskFilter({
                     }
                     className='mt-1 block rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 text-gray-900 dark:text-white'
                 >
-                    <option value='all'>All Dates</option>
-                    <option value='overdue'>Overdue</option>
-                    <option value='today'>Due Today</option>
-                    <option value='this_week'>Due This Week</option>
+                    <option value='all'>Toutes</option>
+                    <option value='overdue'>En retard</option>
+                    <option value='today'>Aujourd&apos;hui</option>
+                    <option value='this_week'>Cette semaine</option>
                 </select>
             </div>
         </div>
